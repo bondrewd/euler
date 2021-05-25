@@ -1,17 +1,25 @@
 const std = @import("std");
 
 pub fn build(b: *std.build.Builder) void {
-    // Standard release options allow the person running `zig build` to select
-    // between Debug, ReleaseSafe, ReleaseFast, and ReleaseSmall.
     const mode = b.standardReleaseOptions();
+    const target = b.standardTargetOptions(.{});
 
-    const lib = b.addStaticLibrary("euler", "src/main.zig");
-    lib.setBuildMode(mode);
-    lib.install();
+    const exe = b.addExecutable("euler", "src/main.zig");
+    exe.setOutputDir("bin");
+    exe.setBuildMode(mode);
+    exe.setTarget(target);
+    exe.install();
 
-    var main_tests = b.addTest("src/main.zig");
-    main_tests.setBuildMode(mode);
+    const run_cmd = exe.run();
+    run_cmd.step.dependOn(b.getInstallStep());
+
+    const run_step = b.step("run", "Run the app");
+    run_step.dependOn(&run_cmd.step);
+
+    const test_cmd = b.addTest("src/tests.zig");
+    test_cmd.setBuildMode(mode);
+    test_cmd.setTarget(target);
 
     const test_step = b.step("test", "Run library tests");
-    test_step.dependOn(&main_tests.step);
+    test_step.dependOn(&test_cmd.step);
 }

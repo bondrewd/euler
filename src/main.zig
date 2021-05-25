@@ -1,10 +1,7 @@
 const std = @import("std");
-const testing = std.testing;
+const problems = @import("problems.zig");
 
-export fn add(a: i32, b: i32) i32 {
-    return a + b;
-}
-
-test "basic add functionality" {
-    try testing.expect(add(3, 7) == 10);
+pub fn main() !void {
+    const out = std.io.getStdOut().writer();
+    try out.print("Problem 001: {d}\n", .{problems.p001()});
 }
