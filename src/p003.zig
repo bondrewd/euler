@@ -6,8 +6,8 @@ pub fn p003() u64 {
 }
 
 fn largestPrimeFactor(num: u64) u64 {
-    var n = num;
-    if (n < 2) return 1;
+    if (num < 2) return 1;
+    var n: u64 = num;
     var f: u64 = 2;
     while (n != 1) : (f += 1) {
         while (n % f == 0) n /= f;
