@@ -1,7 +1,7 @@
 const std = @import("std");
 const testing = std.testing;
 
-pub fn p001() u32 {
+pub fn problem() u32 {
     return sumOfMultiples(3, 5, 1000);
 }
 

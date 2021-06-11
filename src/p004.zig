@@ -2,7 +2,7 @@ const std = @import("std");
 const math = std.math;
 const testing = std.testing;
 
-pub fn p004() u32 {
+pub fn problem() u32 {
     return largest(3);
 }
 
@@ -67,6 +67,5 @@ test "Problem 004.2" {
 }
 
 test "Problem 004.3" {
-    std.debug.print("largest: {any}\n", .{largest(2)});
     try testing.expect(largest(2) == 9009);
 }

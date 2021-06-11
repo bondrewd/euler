@@ -1,7 +1,7 @@
 const std = @import("std");
 const testing = std.testing;
 
-pub fn p003() u64 {
+pub fn problem() u64 {
     return largestPrimeFactor(600_851_475_143);
 }
 

@@ -1,7 +1,7 @@
 const std = @import("std");
 const testing = std.testing;
 
-pub fn p002() u32 {
+pub fn problem() u32 {
     return sumOfFibNums(1_000_000);
 }
 
