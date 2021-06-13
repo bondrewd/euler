@@ -9,4 +9,5 @@ pub fn main() !void {
     try out.print("Problem 004: {d}\n", .{problems.p004()});
     try out.print("Problem 005: {d}\n", .{problems.p005()});
     try out.print("Problem 006: {d}\n", .{problems.p006()});
+    try out.print("Problem 007: {d}\n", .{problems.p007()});
 }
