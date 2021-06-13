@@ -5,3 +5,4 @@ pub const p004 = @import("p004.zig").problem;
 pub const p005 = @import("p005.zig").problem;
 pub const p006 = @import("p006.zig").problem;
 pub const p007 = @import("p007.zig").problem;
+pub const p008 = @import("p008.zig").problem;

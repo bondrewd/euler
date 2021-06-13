@@ -1,5 +1,4 @@
 const std = @import("std");
-const math = std.math;
 const testing = std.testing;
 
 pub fn problem() u64 {

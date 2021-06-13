@@ -6,4 +6,5 @@ comptime {
     _ = @import("p005.zig");
     _ = @import("p006.zig");
     _ = @import("p007.zig");
+    _ = @import("p008.zig");
 }
