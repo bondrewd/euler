@@ -134,7 +134,7 @@ fn sumData(allocator: *Allocator) !Managed {
     try rslt.set(0);
     try temp.set(0);
 
-    var lines = mem.tokenize(data, "\n");
+    var lines = mem.tokenize(u8, data, "\n");
     while (lines.next()) |line| {
         try temp.setString(10, line);
 

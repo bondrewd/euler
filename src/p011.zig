@@ -33,10 +33,10 @@ pub fn problem() u32 {
 fn arrayFromData() ![20][20]u32 {
     var matrix = [_][20]u32{[_]u32{0} ** 20} ** 20;
 
-    var lines = mem.tokenize(data, "\n");
+    var lines = mem.tokenize(u8, data, "\n");
     var i: usize = 0;
     while (lines.next()) |line| {
-        var numbers = mem.tokenize(line, " ");
+        var numbers = mem.tokenize(u8, line, " ");
         var j: usize = 0;
         while (numbers.next()) |number| {
             matrix[i][j] = try fmt.parseUnsigned(u32, number, 10);
